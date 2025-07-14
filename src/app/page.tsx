@@ -5,7 +5,7 @@ import { Button } from "@/shared/ui/button";
 export default function Home() {
   return (
     <div>
-      <Button size={"lg"} variant={"ghost"}>Hello world</Button>
+      <Button size={"lg"} >Hello world</Button>
     </div>
   );
 }

@@ -19,6 +19,7 @@ model Game {
   status     GameStatus
   players    User[]     @relation("games")
   winner     User?      @relation(fields: [winnerId], references: [id])
+  field      Json?
   winnerId   String?
   gameOverAt String?
 }
@@ -33,7 +34,7 @@ enum GameStatus {
 model User {
   id           String @id @default(cuid())
   login        String
-  rating       Int
+  raiting       Int
   passwordHash String
   games        Game[] @relation("games")
   winnerGames  Game[]

@@ -6,21 +6,21 @@ export type GameEntity =
 
 export type GameIdleEntity = {
   id: string;
-  players: PlayerEntity[];
+  creator: PlayerEntity;
   status: "idle";
 };
 
 export type GameInProgressEntity = {
   id: string;
   players: PlayerEntity[];
-  field: Field[];
-  status: "inProgess";
+  field: Field;
+  status: "inProgress";
 };
 
 export type GameOverEntity = {
   id: string;
   players: PlayerEntity[];
-  field: Field[];
+  field: Field;
   status: "gameOver";
   winner: PlayerEntity;
 };
@@ -28,7 +28,7 @@ export type GameOverEntity = {
 export type GameOverDrowEntity = {
   id: string;
   players: PlayerEntity[];
-  field: Field[];
+  field: Field;
   status: "gameOverDrow";
 };
 
@@ -38,7 +38,7 @@ export type PlayerEntity = {
   raiting: number;
 };
 
-export type Field = Cell[];
+export type Field = (GameSymbol | null)[];
 
-export type Cell = GameSymbol | null;
+// export type Cell = GameSymbol | null;
 export type GameSymbol = string;
